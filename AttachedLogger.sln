@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageReceiver", "..\FrameworkServer\MessageReceiver.csproj", "{0B740E74-375A-4656-9967-8FD0DA1B9260}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttachedLogger", "AttachedLogger\AttachedLogger.csproj", "{A0A9DE6B-3504-4081-82E5-DE0A3AD58B9C}"
-EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CommonValues", "CommonConstants\CommonValues.shproj", "{52C79A79-1B07-41DA-B82F-839144268ED8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggerReceiver", "Receiver\LoggerReceiver.csproj", "{0B740E74-375A-4656-9967-8FD0DA1B9260}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logger", "Logger\Logger.csproj", "{93644796-C7C3-49CA-8A69-4B5E58DC97BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttachedLoggerTest", "AttachedLoggerTest\AttachedLoggerTest.csproj", "{6969D375-C576-4FCE-9E19-CB3FC60D3AD2}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		CommonConstants\CommonConstants.projitems*{0b740e74-375a-4656-9967-8fd0da1b9260}*SharedItemsImports = 4
 		CommonConstants\CommonConstants.projitems*{52c79a79-1b07-41da-b82f-839144268ed8}*SharedItemsImports = 13
-		CommonConstants\CommonConstants.projitems*{a0a9de6b-3504-4081-82e5-de0a3ad58b9c}*SharedItemsImports = 4
+		CommonConstants\CommonConstants.projitems*{93644796-c7c3-49ca-8a69-4b5e58dc97ba}*SharedItemsImports = 5
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,10 +26,14 @@ Global
 		{0B740E74-375A-4656-9967-8FD0DA1B9260}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B740E74-375A-4656-9967-8FD0DA1B9260}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B740E74-375A-4656-9967-8FD0DA1B9260}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A0A9DE6B-3504-4081-82E5-DE0A3AD58B9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A0A9DE6B-3504-4081-82E5-DE0A3AD58B9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A0A9DE6B-3504-4081-82E5-DE0A3AD58B9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A0A9DE6B-3504-4081-82E5-DE0A3AD58B9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93644796-C7C3-49CA-8A69-4B5E58DC97BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93644796-C7C3-49CA-8A69-4B5E58DC97BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93644796-C7C3-49CA-8A69-4B5E58DC97BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93644796-C7C3-49CA-8A69-4B5E58DC97BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6969D375-C576-4FCE-9E19-CB3FC60D3AD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6969D375-C576-4FCE-9E19-CB3FC60D3AD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6969D375-C576-4FCE-9E19-CB3FC60D3AD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6969D375-C576-4FCE-9E19-CB3FC60D3AD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

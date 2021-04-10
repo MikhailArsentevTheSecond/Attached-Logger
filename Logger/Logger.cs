@@ -1,10 +1,11 @@
-﻿using System;
+﻿using CommonValues;
+using System;
 using System.IO;
 using System.IO.Pipes;
 
 namespace AttachedLogger
 {
-    public static class AttachedLogger
+    public static class Logger
     {
         enum ExceptionPlace
         {
@@ -23,7 +24,7 @@ namespace AttachedLogger
         {
             try
             {
-                sender = new NamedPipeClientStream(".", CommonValues.Constants.PipeName, PipeDirection.Out, PipeOptions.Asynchronous);
+                sender = new NamedPipeClientStream(".", Constants.PipeName, PipeDirection.Out, PipeOptions.Asynchronous);
                 sendHelper = new StreamWriter(sender);
                 sender.Connect();
             }
@@ -35,21 +36,18 @@ namespace AttachedLogger
 
         public static void SendMessage(string message)
         {
-            PossibilityCheck();
-            try
+            if(PossibilityCheck())
             {
-                sendHelper.WriteLine(message);
-                sendHelper.Flush();
+                try
+                {
+                    sendHelper.WriteLine(message);
+                    sendHelper.Flush();
+                }
+                catch (Exception ex)
+                {
+                    HandleError(ex, ExceptionPlace.WhileSendingMessage);
+                }
             }
-            catch (Exception ex)
-            {
-                HandleError(ex, ExceptionPlace.WhileSendingMessage);
-            }
-        }
-
-        public static void Dispose()
-        {
-
         }
 
         static bool PossibilityCheck()
@@ -93,7 +91,6 @@ namespace AttachedLogger
             }
             catch (Exception)
             {
-                //That's sad
                 isCrashed = true;
             }
         }
